@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_count_if.c                                    .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2018/10/15 10:56:34 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/15 10:57:08 by jde-mour    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
+/* ************************************************************************** */
 
-
-int ft_count_if(char **tab, int(*f)(char*))
+int	ft_count_if(char **tab, int (*f)(char*))
 {
 	int i;
 	int nb;
@@ -8,8 +19,8 @@ int ft_count_if(char **tab, int(*f)(char*))
 	i = 0;
 	nb = 0;
 	while (tab[i][0] != '0')
-	{	
-		if (f(tab[i] == 1)
+	{
+		if (f(tab[i] == 1))
 			nb++;
 		i++;
 	}
