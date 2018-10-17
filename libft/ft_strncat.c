@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.comr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/17 15:49:23 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 15:49:51 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/17 18:06:03 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,10 +26,6 @@ char	*ft_strncat(char *dest, const char *src, size_t len)
 		i++;
 		j++;
 	}
-	while (dest[i])
-	{
-		dest[i] = '\0';
-		i++;
-	}
+	dest[i] = '\0';
 	return (dest);
 }

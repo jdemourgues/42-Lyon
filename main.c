@@ -1,15 +1,10 @@
-#include "ft_point.h"
-
-void	set_point(t_point *point)
-{
-	point->x=42;
-	point->y=21;
-}
+#include "libft/libft.h"
 
 int		main(void)
 {
-	t_point					point;
+	char	*src = "Ipsum Lorem iara";
+	int		c = 121;
 
-	set_point(&point);
+	printf("%s\n", strchr(src, c));
 	return (0);
 }

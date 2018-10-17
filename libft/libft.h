@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/15 16:14:44 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 16:31:41 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/17 17:50:39 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 int		ft_strlen(char *str);
 char	*ft_strdup(char *src);

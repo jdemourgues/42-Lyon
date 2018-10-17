@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_strlcat.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/17 15:50:10 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 16:31:16 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/17 18:25:51 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/17 18:26:15 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	i = 0;
 	while (dest[i] != '\0' && i < n)
 		i++;
+	if (n == 0)
+		return (ft_strlen((char *)src));
 	j = i;
 	while (src[i - j] != '\0' && i < n - 1)
 	{

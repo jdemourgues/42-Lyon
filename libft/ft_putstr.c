@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/05 10:40:41 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/15 19:29:08 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/17 18:16:12 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,6 +17,8 @@ void	ft_putstr(char *str)
 {
 	int i;
 
+	if (!str)
+		return ;
 	i = -1;
 	while (str[++i] != '\0')
 		ft_putchar(str[i]);
