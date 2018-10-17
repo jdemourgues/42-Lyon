@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   libft.h                                          .::    .:/ .      .::   */
+/*   ft_strncpy.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/15 16:14:44 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/16 19:48:46 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/16 19:45:39 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 19:50:17 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <string.h>
+char	*ft_strncpy(char *dst, const char *src, size_t len)
+{
+	size_t i;
 
-int		ft_strlen(char *str);
-char	*ft_strdup(char *src);
-int		ft_strcmp(char *s0, char *s2);
-void	ft_putchar(char c);
-void	ft_putnbr(int nb);
-void	ft_putstr(char *str);
-char	*ft_strcpy(char *dst, const char *src);
-char	*ft_strncpy(char *dst, const char *src, size_t len);
-
-#endif
+	i = 0;
+	while (src[i] && i < len)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	while (i < len)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
+}
