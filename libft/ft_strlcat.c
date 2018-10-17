@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strcat.c                                      .::    .:/ .      .::   */
+/*   ft_strlcat.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
+/*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/17 15:48:32 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 15:48:58 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/17 15:50:10 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/17 16:31:16 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
-	int i;
-	int j;
+	size_t	i;
+	size_t	j;
 
-	i = ft_strlen(dest);
-	j = 0;
-	while (src[j])
-	{
-		dest[i] = src[j];
+	i = 0;
+	while (dest[i] != '\0' && i < n)
 		i++;
-		j++;
+	j = i;
+	while (src[i - j] != '\0' && i < n - 1)
+	{
+		dest[i] = src[i - j];
+		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	if (j < n)
+		dest[i] = '\0';
+	return (j + ft_strlen((char *)src));
 }
