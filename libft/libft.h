@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/15 16:14:44 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/22 15:59:56 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/22 18:33:53 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <xlocale.h>
 
 int		ft_strlen(char *str);
 char	*ft_strdup(char *src);
@@ -32,4 +33,6 @@ char	*ft_strncat(char *dest, const char *src, size_t len);
 size_t	ft_strlcat(char *dest, const char *src, size_t len);
 char	*ft_strchr(const char *src, int c);
 char	*ft_strrchr(const char *src, int c);
+char	*ft_strstr(const char *haystack, const char *needle);
+
 #endif
