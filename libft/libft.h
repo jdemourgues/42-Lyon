@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/15 16:14:44 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/26 15:24:26 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/29 14:48:13 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -36,5 +36,6 @@ char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strcmp(char *s0, char *s2);
 int		ft_strncmp(char *s0, char *s2, size_t n);
+int		ft_atoi(const char *nptr);
 
 #endif
