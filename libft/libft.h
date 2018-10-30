@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/15 16:14:44 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/30 16:32:29 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/30 17:39:34 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,6 +21,7 @@
 # include <xlocale.h>
 # include <ctype.h>
 
+int 	ft_memcmp(const void *sr1, const void *sr2, size_t n);
 int		ft_strlen(char *str);
 char	*ft_strdup(char *src);
 void	ft_putchar(char c);
@@ -44,6 +45,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 int		ft_isupper(int c);
 int		ft_islower(int c);
