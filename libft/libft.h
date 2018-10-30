@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/15 16:14:44 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/30 16:24:32 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/30 16:28:19 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -45,5 +45,6 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 
 int		ft_isupper(int c);
+int		ft_islower(int c);
 
 #endif
