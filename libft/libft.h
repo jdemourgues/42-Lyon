@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/15 16:14:44 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/30 17:39:34 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/30 18:06:20 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,7 +21,8 @@
 # include <xlocale.h>
 # include <ctype.h>
 
-int 	ft_memcmp(const void *sr1, const void *sr2, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *sr1, const void *sr2, size_t n);
 int		ft_strlen(char *str);
 char	*ft_strdup(char *src);
 void	ft_putchar(char c);
