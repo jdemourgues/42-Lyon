@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_memccpy.c                                     .::    .:/ .      .::   */
+/*   ft_memset.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/31 20:41:40 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/01 18:09:20 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/01 16:59:23 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/01 17:04:06 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *str2, const void *str1, int c, size_t n)
+void	*ft_memset(void *str, int c, size_t len)
 {
-	unsigned const char	*src;
-	unsigned char	*dest;
-	size_t	i;
-
-	i = 0;
-	src = (unsigned const char *)str1;
-	dest = (unsigned char *)str2;
-	while (i < n)
-	{
-		dest[i] = src[i];
-		if (src[i] == (unsigned char)c)
-			return (&dest[i + 1]);
-		i++;
-	}
-	return (NULL);
+	while (len--)
+		((char *)str)[len] = c;
+	return (str);
 }
