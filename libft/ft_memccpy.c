@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/31 20:41:40 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/01 18:09:20 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/02 15:53:06 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,8 +16,8 @@
 void	*ft_memccpy(void *str2, const void *str1, int c, size_t n)
 {
 	unsigned const char	*src;
-	unsigned char	*dest;
-	size_t	i;
+	unsigned char		*dest;
+	size_t			i;
 
 	i = 0;
 	src = (unsigned const char *)str1;

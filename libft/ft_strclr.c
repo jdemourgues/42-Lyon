@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strnew.c                                      .::    .:/ .      .::   */
+/*   ft_strclr.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/11/02 15:50:42 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/02 15:51:15 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/02 15:55:21 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/02 16:09:44 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_strclr(char *s)
 {
-	char	*res;
+	size_t i;
 
-	res = ft_memalloc(size + 1);
-	return (res);
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		s[i] = '\0';
+		i++;
+	}
 }

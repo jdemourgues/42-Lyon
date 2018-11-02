@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strnew.c                                      .::    .:/ .      .::   */
+/*   ft_strdel.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/11/02 15:50:42 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/02 15:51:15 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/02 15:35:58 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/02 15:44:32 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_strdel(char **as)
 {
-	char	*res;
-
-	res = ft_memalloc(size + 1);
-	return (res);
+	ft_memdel((void **)as);
+	as = NULL;
 }
