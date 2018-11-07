@@ -3,16 +3,17 @@
 /*                                                              /             */
 /*   ft_strmapi.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/07 10:40:17 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/07 10:42:48 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/07 10:59:14 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
-char*	ft_strmapi(char const*s,char (*f)(unsigned int, char))
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*res;
 	int		i;
