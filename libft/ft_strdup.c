@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/10 17:22:15 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 17:56:30 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/13 17:20:00 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@
 char	*ft_strdup(char *src)
 {
 	char	*dest;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	if (!(dest = (char *)(malloc(sizeof(*src) * (ft_strlen(src) + 1)))))
