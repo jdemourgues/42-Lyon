@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/15 16:14:44 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/13 19:05:06 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/15 20:17:33 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -65,8 +65,10 @@ int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
 
 int		ft_isupper(int c);
 int		ft_islower(int c);
-
+int		ft_isblank(int c);
+int		ft_isspace(int c);
 #endif
