@@ -18,11 +18,15 @@ char	*ft_strtrim(char const *s)
 	int	start;
 	int end;
 
+	if (!s)
+		return (NULL);
 	start = 0;
 	end = ft_strlen((char *)s);
-	while (ft_isblank(s[start]))
+	while (ft_isspace(s[start]))
 		start++;
-	while (ft_isblank(s[end]))
+	while (ft_isspace(s[end - 1]))
 		end--;
+	if (end <= start)
+		return (ft_strdup(""));
 	return(ft_strsub(s, start, end - start));
 }	
