@@ -6,7 +6,7 @@
 /*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/14 10:39:33 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/19 17:32:10 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/27 13:20:12 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,5 +28,5 @@ char	*ft_strtrim(char const *s)
 		end--;
 	if (end <= start)
 		return (ft_strdup(""));
-	return(ft_strsub(s, start, end - start));
-}	
+	return (ft_strsub(s, start, end - start));
+}
