@@ -6,7 +6,7 @@
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/15 16:14:44 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/27 14:02:37 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/29 17:00:25 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -75,5 +75,6 @@ int		ft_isblank(int c);
 int		ft_isspace(int c);
 int		ft_words_count(const char *str, char c);
 int		ft_word_len(const char *str, char c);
+int		ft_intlen(int i);
 
 #endif

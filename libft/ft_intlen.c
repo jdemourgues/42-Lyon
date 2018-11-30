@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_itoa.c                                        .::    .:/ .      .::   */
+/*   ft_intlen.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: jerome de Mourgues <jerome@demourgues.com> +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/11/27 14:04:18 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/29 18:53:24 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/29 17:01:42 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/29 18:23:59 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static bool	is_neg(int nb)
+int		ft_intlen(int num)
 {
-	return (nb < 0);
-}
-
-char	*ft_itoa(int n);
-{
-	int 	i;
-	char	*res;
-	int		is_neg;
-
-	if (i = –2147483648)
-		return (ft_strdup("-2147483648"));	
-	while(str[i])
+	int i;
+	
+	if (!num)
+		return (0);
+	if (num < 0)
+		num = num * (-1);
+	i = 0;
+	while(num)
 	{
-		str
+		num = num / 10;
+		i++;
 	}
+	return (i);
 }
