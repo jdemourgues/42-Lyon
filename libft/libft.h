@@ -69,6 +69,7 @@ char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const*s, char c);
 char	*ft_itoa(int n);
 void	ft_putendl(char const *s);
+void 	ft_putchar_fd(char c, int fd);
 
 int		ft_isupper(int c);
 int		ft_islower(int c);
