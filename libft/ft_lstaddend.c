@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putendl.c                                     .::    .:/ .      .::   */
+/*   ft_lstaddend.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jde-mour <jde-mour@le-101.fr>              +:+   +:    +:    +:+     */
+/*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/03 17:59:12 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/11 12:35:43 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/12/11 18:17:28 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/12/11 18:19:36 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void    ft_lstaddend(t_list **nlst, t_list *new)
 {
-	if (!s)
-		return ;
-	ft_putstr((char *)s);
-	write(1, "\n", 1);
+	t_list    *tmp;
+
+	tmp = *nlst;
+	if (tmp == NULL)
+		*nlst = new;
+	else
+	{
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = new;
+	}
 }

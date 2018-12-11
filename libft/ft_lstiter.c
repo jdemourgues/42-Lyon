@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putendl.c                                     .::    .:/ .      .::   */
+/*   ft_lstiter.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jde-mour <jde-mour@le-101.fr>              +:+   +:    +:    +:+     */
+/*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/03 17:59:12 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/11 12:35:43 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/12/11 17:36:29 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/12/11 17:39:19 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	if (!s)
-		return ;
-	ft_putstr((char *)s);
-	write(1, "\n", 1);
+	while (lst)
+	{
+		f(lst);
+		lst = lst->next;
+	}
 }
