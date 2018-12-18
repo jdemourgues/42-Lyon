@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_strclr.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/05 11:41:11 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/11 20:20:42 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/02 15:55:21 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/02 16:09:44 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_strclr(char *s)
 {
-	size_t	len;
+	size_t i;
 
-	len = 0;
-	while (str[len] != '\0')
-		++len;
-	return (len);
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		s[i] = '\0';
+		i++;
+	}
 }

@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_strrchr.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/05 11:41:11 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/11 20:20:42 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/18 19:17:33 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/22 10:55:27 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strrchr(const char *src, int c)
 {
-	size_t	len;
+	int i;
 
-	len = 0;
-	while (str[len] != '\0')
-		++len;
-	return (len);
+	i = ft_strlen((char *)src);
+	while (i > 0)
+	{
+		if (src[i] == (char)c)
+			return ((char *)src + i);
+		--i;
+	}
+	if (src[i] == (char)c)
+		return ((char *)src + i);
+	return (NULL);
 }

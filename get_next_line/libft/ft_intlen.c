@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_intlen.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
+/*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/05 11:41:11 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/11 20:20:42 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/12/07 17:25:21 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/12/07 17:28:04 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int		ft_intlen(long num)
 {
-	size_t	len;
+	int	i;
 
-	len = 0;
-	while (str[len] != '\0')
-		++len;
-	return (len);
+	i = 0;
+	if (num < 0)
+	{
+		i++;
+		num = num * -1;
+	}
+	if (num == 0)
+		return (1);
+	while (num > 0)
+	{
+		num = num / 10;
+		i++;
+	}
+	return (i);
 }

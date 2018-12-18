@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_word_len.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/05 11:41:11 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/11 20:20:42 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/26 14:22:06 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/26 14:26:17 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int		ft_word_len(const char *str, char c)
 {
-	size_t	len;
+	int i;
 
-	len = 0;
-	while (str[len] != '\0')
-		++len;
-	return (len);
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i] != '\0' && str[i] != c)
+		i++;
+	return (i);
 }

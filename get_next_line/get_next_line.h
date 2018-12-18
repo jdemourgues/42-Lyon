@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   get_next_line.h                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
+/*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/05 11:41:11 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/11 20:20:42 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/12/17 17:41:12 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/12/18 16:50:35 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-size_t	ft_strlen(const char *str)
-{
-	size_t	len;
 
-	len = 0;
-	while (str[len] != '\0')
-		++len;
-	return (len);
-}
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+# include "libft/libft.h"
+
+#define BUFF_SIZE 4096
+
+int		get_next_line(const int fd, char **line);
+
+#endif

@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_lstaddend.c                                   .::    .:/ .      .::   */
+/*   ft_strsplit.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/12/11 18:17:28 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/11 20:43:31 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/26 15:31:58 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/27 13:17:08 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstaddend(t_list **nlst, t_list *new)
+char	**ft_strsplit(char const *s, char c)
 {
-	t_list	*tmp;
+	char	**res;
+	int		i;
+	int		word_num;
 
-	tmp = *nlst;
-	if (tmp == NULL)
-		*nlst = new;
-	else
+	if (!(res = (char **)malloc(sizeof(char *) * (ft_words_count(s, c) + 1)))
+			|| !s)
+		return (NULL);
+	i = 0;
+	word_num = 0;
+	while (s[i])
 	{
-		while (tmp->next != NULL)
-			tmp = tmp->next;
-		tmp->next = new;
+		while (s[i] == c)
+			i++;
+		if (!s[i])
+			break ;
+		res[word_num] = ft_strsub(s, i, ft_word_len(s + i, c));
+		word_num++;
+		i = i + ft_word_len(s + i, c);
 	}
+	res[word_num] = 0;
+	return (res);
 }

@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_strtrim.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jde-mour <jerome@demourgues.com>           +:+   +:    +:    +:+     */
+/*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/05 11:41:11 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/11 20:20:42 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/11/14 10:39:33 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/27 13:20:12 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strtrim(char const *s)
 {
-	size_t	len;
+	int	start;
+	int end;
 
-	len = 0;
-	while (str[len] != '\0')
-		++len;
-	return (len);
+	if (!s)
+		return (NULL);
+	start = 0;
+	end = ft_strlen((char *)s);
+	while (ft_isspace(s[start]))
+		start++;
+	while (ft_isspace(s[end - 1]))
+		end--;
+	if (end <= start)
+		return (ft_strdup(""));
+	return (ft_strsub(s, start, end - start));
 }

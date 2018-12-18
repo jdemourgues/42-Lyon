@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_lstaddend.c                                   .::    .:/ .      .::   */
+/*   ft_strnstr.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/12/11 18:17:28 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/11 20:43:31 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/23 09:28:17 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/26 15:17:37 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstaddend(t_list **nlst, t_list *new)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	t_list	*tmp;
+	size_t i;
+	size_t j;
+	size_t needle_len;
 
-	tmp = *nlst;
-	if (tmp == NULL)
-		*nlst = new;
-	else
+	needle_len = ft_strlen((char *)needle);
+	if (needle_len == 0)
+		return ((char *)haystack);
+	i = 0;
+	j = 0;
+	while (haystack[i] && i < (len))
 	{
-		while (tmp->next != NULL)
-			tmp = tmp->next;
-		tmp->next = new;
+		while (haystack[i + j] == needle[j] && (i + j) < len)
+		{
+			if (j == needle_len - 1 && j < (len))
+				return ((char*)&haystack[i]);
+			j++;
+		}
+		j = 0;
+		i++;
 	}
+	return (NULL);
 }
