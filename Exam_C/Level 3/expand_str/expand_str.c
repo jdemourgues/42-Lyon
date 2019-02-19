@@ -1,43 +1,54 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   paramsum.c                                       .::    .:/ .      .::   */
+/*   expand_str.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/12/24 15:04:30 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/24 15:32:27 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/02/08 16:43:48 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2019/02/08 17:59:31 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
+int		is_sep(char c) {
+	if (c == ' ' || (c >= 9 && c <= 13))
+		return 1;
+	else 
+		return 0;
 }
 
-void	ft_putnbr(int x)
-{
-	if (x > 9)
-	{
-		ft_putnbr(x / 10);
-		ft_putnbr(	x % 10);
+void	ft_expand_str(char *str) {
+	int i;
+
+	i = 0;
+	while (str[i] && is_sep(str[i]))
+		i++;
+	while(str[i] && str[i] != '\n') {
+		if(!is_sep(str[i])) 
+			write(1, &str[i], 1);
+		else {
+			while(is_sep(str[i]))
+				i++;
+			if(!str[i]) {
+				return;
+			}
+			else {
+				write(1, "   ", 3);
+				i--;
+			}
+		}
+		i++;
 	}
-	else
-		ft_putchar(x + '0');
+	i++;
 }
 
-int		main(int argc, char **		argv)
+int main(int argc, char *argv[])
 {
-	int x;
-
-	argv[1] = "0";
-	x = argc - 1;
-	if (x >= 0)
-		ft_putnbr(x);
-	write(1, "\n", 1);
-	return (0);
+	if (argc == 2)
+		ft_expand_str(argv[1]);
+	write(1,"\n", 1);
+	return 0;
 }
