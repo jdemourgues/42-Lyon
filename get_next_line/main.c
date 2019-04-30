@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   get_next_line.h                                  .::    .:/ .      .::   */
+/*   main.c                                           .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/12/17 17:41:12 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/18 16:50:35 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/04/30 13:58:22 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2019/04/30 14:05:24 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "get_next_line.h"
+#include <stdio.h>
+int	main(int argc, char **argv)
+{
+	int		fd;
+	char	*line;
+	int		ret;
+	int		i;
 
-
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-# include "libft/libft.h"
-
-#define BUFF_SIZE 4096
-
-int		get_next_line(const int fd, char **line);
-
-#endif
+	if (argc >= 2){
+		if (access(argv[1], F_OK) == 0){
+			i = 0;
+			fd = open(argv[1], O_RDONLY);
+			while((ret = get_next_line(fd, &line)) == 1){
+				i++;
+				printf("MAIN:%d, line>%s\n", ret, line);
+			}
+			close(fd);
+		}
+	}
+	return (0);
+}
