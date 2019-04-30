@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   get_next_line.h                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: moghomra <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/04/29 17:46:13 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/30 14:09:15 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/29 11:38:26 by moghomra     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/02 16:52:56 by moghomra    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,8 +17,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "./libft/libft.h"
-# define	BUFF_SIZE	4
+# include "./libft/includes/libft.h"
+# define BUFF_SIZE	4
 
-int		get_next_line(int const fd, char **line);
+int get_next_line(int const fd, char **line);
 #endif

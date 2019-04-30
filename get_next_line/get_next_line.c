@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   get_next_line.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jde-mour <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: moghomra <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/02/26 18:23:50 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/30 14:15:17 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/29 11:34:50 by moghomra     #+#   ##    ##    #+#       */
+/*   Updated: 2018/11/26 11:43:40 by moghomra    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,11 +15,11 @@
 
 int		ft_lecture(const int fd, char *buffer, char **rd)
 {
-	int		res;
-	char	*tmp;
+	int			res;
+	char		*tmp;
 
-	while ((ft_strchr(buffer, 'n') == NULL)
-			&& (res = read(fd, buffer, BUFF_SIZE)) > 0)
+	while (((ft_strchr(buffer, '\n') == NULL) &&
+				(res = read(fd, buffer, BUFF_SIZE)) > 0))
 	{
 		buffer[res] = '\0';
 		tmp = *rd;
@@ -42,12 +42,12 @@ int		get_next_line(const int fd, char **line)
 	char		*tmp;
 
 	buffer = ft_strnew(BUFF_SIZE);
-	if (fd < 0 || line == NULL || BUFF_SIZE < 1 || buffer == NULL
-			|| read(fd, *line, 0) < 0)
+	if (fd < 0 || line == NULL || BUFF_SIZE < 1 || buffer == NULL ||
+			read(fd, *line, 0) < 0)
 		return (-1);
 	if (rd[fd] == NULL)
 		rd[fd] = ft_strnew(1);
-	if ((pr = ft_lecture(fd, buffer, &rd[fd])) == -1)
+	if (((pr = ft_lecture(fd, buffer, &rd[fd])) == -1))
 		return (-1);
 	if ((str = ft_strchr(rd[fd], '\n')) != NULL)
 	{
