@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   get_next_line.h                                  .::    .:/ .      .::   */
+/*   ft_strndup.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <jde-mour@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/29 11:38:26 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/02 14:50:28 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/14 18:18:30 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2019/05/02 10:14:41 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include "./libft/includes/libft.h"
-# define BUFF_SIZE	4
+char	*ft_strndup(const char *src, size_t n)
+{
+	char		*str;
+	size_t		len;
+	size_t		i;
 
-int get_next_line(int const fd, char **line);
-#endif
+	len = ft_strlen(src);
+	if (!(str = ft_memalloc(len)))
+		return (NULL);
+	i = 0;
+	while (i < n && src && str)
+	{
+		str[i] = src[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}

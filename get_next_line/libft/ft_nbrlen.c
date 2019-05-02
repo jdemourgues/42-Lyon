@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   get_next_line.h                                  .::    .:/ .      .::   */
+/*   ft_nbrlen.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: jde-mour <jde-mour@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/29 11:38:26 by jde-mour     #+#   ##    ##    #+#       */
-/*   Updated: 2019/05/02 14:50:28 by jde-mour    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/15 17:38:42 by jde-mour     #+#   ##    ##    #+#       */
+/*   Updated: 2019/05/02 10:14:41 by jde-mour    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+int	ft_nbrlen(int n)
+{
+	int		len;
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include "./libft/includes/libft.h"
-# define BUFF_SIZE	4
-
-int get_next_line(int const fd, char **line);
-#endif
+	len = 0;
+	if (n == 0)
+	{
+		return (1);
+	}
+	else if (n < 0)
+	{
+		++len;
+	}
+	while (n != 0)
+	{
+		n /= 10;
+		++len;
+	}
+	return (len);
+}
